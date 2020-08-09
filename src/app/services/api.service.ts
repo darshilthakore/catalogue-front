@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Category } from '../shared/category';
 import { baseURL } from '../shared/baseurl';
 import { Subcategory } from '../shared/subcategory';
 import { Product } from '../shared/product';
+import { newProd } from '../shared/newProd';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+
+  public mysubject = new Subject();
 
   constructor(
     private http: HttpClient) { }
@@ -31,5 +34,9 @@ export class ApiService {
 
     getProducts(): Observable<Product[]> {
       return this.http.get<Product[]>(baseURL + 'api/products', this.getAuthHeaders());
+    }
+
+    addProduct(product: newProd): Observable<newProd> {
+      return this.http.post<newProd>(baseURL + 'api/add/', product, this.getAuthHeaders());
     }
 }

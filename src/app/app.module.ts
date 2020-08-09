@@ -8,7 +8,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-
+import {MatCheckboxModule} from '@angular/material/checkbox'; 
+import {MatSelectModule} from '@angular/material/select'; 
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,6 +36,9 @@ import { baseURL } from './shared/baseurl';
     FlexLayoutModule,
     MatInputModule,
     MatButtonModule,
+    MatCheckboxModule,
+    MatSelectModule,
+    FormsModule,
   ],
   providers: [
     ApiService,
