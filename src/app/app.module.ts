@@ -19,11 +19,13 @@ import { TableComponent } from './table/table.component';
 
 import { ApiService } from './services/api.service';
 import { baseURL } from './shared/baseurl';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TableComponent
+    TableComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
